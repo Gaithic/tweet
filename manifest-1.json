@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "AI Twitter Reply",
+  "version": "1.0",
+  "description": "Automatically generates AI replies to tweets.",
+  "permissions": ["https://twitter.com/*", "activeTab", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}

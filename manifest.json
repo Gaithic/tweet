@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Retweet.ai",
+    "description": "The revolutionary AI-powered tweet generator, create quality content fast!",
+    "version": "0.0.1",
+    "browser_action":{
+        "default_popup": "pop.html"
+    },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "icons":{
+        "128":"./icon.png",
+        "64":"./icon.png",
+        "32":"./icon.png",
+        "16":"./icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://twitter.com/*"
+            ],
+            "js": [
+                "js/content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources":[{
+        "resources":[
+            "logo.png",
+            "css/content.css"
+        ],
+        "matches":["https://twitter.com/*"]
+    }]
+}
